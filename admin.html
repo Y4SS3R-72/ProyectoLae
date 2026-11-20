@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LAE - Administración</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="page-admin">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <nav class="nav container" role="navigation">
+      <div class="nav-left">
+        <a href="quienes-somos.html" class="nav-link">Quiénes somos</a>
+        <a href="productos.html" class="nav-link">Productos</a>
+      </div>
+      <div class="nav-center"><div class="logo">❤❤❤LAE❤❤❤</div></div>
+      <div class="nav-right"><a class="cart" href="carrito.html" aria-label="Carrito">🛒</a></div>
+    </nav>
+  </header>
+  <main id="main" class="main container">
+    <h1>Administración de productos</h1>
+    <p>Acceso restringido a cuentas con rol administrador. Los cambios se guardan en la base de datos.</p>
+    <div class="admin-layout">
+      <section class="card">
+        <h2 id="product-form-title">Crear producto</h2>
+        <form id="admin-product-form">
+          <input id="admin-product-id" type="hidden">
+          <label for="admin-name">Nombre</label>
+          <input id="admin-name" type="text" required maxlength="160">
+          <label for="admin-description">Descripción</label>
+          <textarea id="admin-description" rows="4"></textarea>
+          <label for="admin-category">Categoría</label>
+          <select id="admin-category" required></select>
+          <label for="admin-price">Precio (valor de prueba en COP)</label>
+          <input id="admin-price" type="number" min="0" step="0.01" required>
+          <label for="admin-stock">Existencias</label>
+          <input id="admin-stock" type="number" min="0" step="1" required>
+          <label for="admin-kind">Tipo</label>
+          <select id="admin-kind"><option value="product">Producto</option><option value="service">Servicio</option></select>
+          <label for="admin-image">URL de imagen (opcional)</label>
+          <input id="admin-image" type="url">
+          <label><input id="admin-active" type="checkbox" checked> Activo</label>
+          <button class="btn primary" type="submit">Guardar producto</button>
+          <button id="admin-cancel" class="btn" type="button">Limpiar</button>
+        </form>
+        <p id="admin-message" class="form-message" role="status" aria-live="polite"></p>
+      </section>
+      <section>
+        <h2>Productos</h2>
+        <div id="admin-products"></div>
+      </section>
+    </div>
+    <section>
+      <h2>Pedidos recientes</h2>
+      <div id="admin-orders"></div>
+    </section>
+  </main>
+  <script type="module" src="js/navigation.js"></script>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

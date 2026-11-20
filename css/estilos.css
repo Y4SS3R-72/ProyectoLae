@@ -1,0 +1,136 @@
+:root{
+  --bg: #c98fa8; /* morado rosado */
+  --nav: #f9d9e6; /* barra navegación */
+  --primary: #b5468f; /* color primario */
+  --primary-dark: #8f3671; /* hover */
+  --white: #ffffff;
+  --error: #c62828;
+  --warning: #f0b429;
+  --success: #2e7d32;
+  --space: 8px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, "Segoe UI", Roboto, -apple-system, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{max-width:1100px;margin:0 auto;padding-left:16px;padding-right:16px}
+
+/* Header / Nav */
+.site-header{background:var(--nav);border-bottom:4px solid rgba(0,0,0,0.04)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:var(--space);padding:12px 0}
+.nav-left,.nav-right{flex:1;display:flex;gap:16px;align-items:center}
+.nav-center{flex:0 0 auto;text-align:center}
+.nav-link{color:#333;text-decoration:none;padding:8px 12px;border-radius:6px}
+.nav-link:focus{outline:3px solid rgba(0,0,0,0.12);outline-offset:3px}
+.nav-link.active{background:var(--primary);color:var(--white)}
+.logo{font-family: "Brush Script MT", "Segoe Script", cursive;font-size:1.4rem;color:var(--primary);font-style:italic}
+.nav-right{justify-content:flex-end}
+.cart{font-size:1.6rem;text-decoration:none}
+
+/* WhatsApp floating */
+.whatsapp{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:var(--primary);color:var(--white);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,0.15)}
+.whatsapp:focus{outline:3px solid var(--primary-dark);outline-offset:3px}
+
+/* Skip link for keyboard users */
+.skip-link{position:absolute;left:16px;top:8px;background:var(--white);color:#222;padding:8px 12px;border-radius:6px;transform:translateY(-120%);transition:transform 0.18s ease-in-out;z-index:60}
+.skip-link:focus{transform:translateY(0);outline:3px solid var(--primary);}
+
+/* Screen-reader only utility */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Layouts */
+.main{padding:32px 0}
+.two-column{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center}
+.hero-image img{width:100%;height:auto;border-radius:12px;display:block}
+
+.card{background:var(--white);padding:24px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.10)}
+.login-card .card{max-width:420px}
+h1{margin-top:0;font-size:1.6rem}
+p{margin:0 0 16px 0}
+
+label{display:block;margin-bottom:8px;font-weight:600}
+input[type="email"],input[type="password"],input[type="text"],input[type="number"],input[type="search"],select,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #ddd;margin-bottom:16px;font-size:1rem}
+input:focus{outline:3px solid var(--primary);outline-offset:2px}
+
+/* Use focus-visible when available for better keyboard focus */
+:focus-visible{outline:3px solid var(--primary-dark);outline-offset:3px}
+
+.forgot{margin-bottom:16px}
+.texto-error{color:var(--error);text-decoration:none}
+.texto-advertencia{color:var(--warning)}
+.texto-exito{color:var(--success)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;padding:10px 16px;min-height:44px;cursor:pointer;border:none;font-weight:700}
+.btn:focus{outline:3px solid var(--primary-dark);outline-offset:3px}
+.btn.primary{background:var(--primary);color:var(--white)}
+.btn.primary:hover{background:var(--primary-dark)}
+.full{width:100%}
+.hidden{display:none!important}
+.form-message{min-height:1.25em;margin:8px 0;color:var(--error)}
+.form-message:empty{display:none}
+.auth-switch{margin:16px 0 0;text-align:center}
+.admin-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.product-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.product-result{overflow:hidden;background:var(--white);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.product-result img{width:100%;height:200px;object-fit:contain;background:var(--white)}
+.product-result-content{padding:16px}
+.product-result h2,.product-result p{margin:0 0 12px}
+.product-result .btn{margin-top:8px}
+.cart-item-content{flex:1}
+.cart-item .quantity{width:76px;margin:0}
+.cart-item .btn{min-height:36px;padding:8px 12px}
+.admin-order{background:var(--white);padding:16px;border-radius:8px;margin-bottom:12px}
+
+/* Quienes somos */
+.about{padding:32px;text-align:center;color:var(--white);background:#A230A4}
+.about h2{font-style:italic}
+.about img{width:100%;max-width:140px;height:auto;margin-top:24px;border-radius:8px}
+
+/* Productos */
+.products{display:flex;gap:24px}
+.product-card{flex:1;background:transparent;text-align:center;border-radius:10px;overflow:hidden;text-decoration:none;color:inherit}
+.product-card img{width:100%;height:260px;object-fit:cover;display:block}
+.product-card .label{background:rgba(255,255,255,0.9);padding:12px;font-weight:700}
+
+/* Carrito */
+.cart-layout{display:grid;grid-template-columns:1fr 360px;gap:24px}
+.cart-items{background:transparent;padding:8px}
+.cart-item{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.cart-item img{width:64px;height:64px;object-fit:cover;border-radius:8px}
+.summary{background:var(--white);padding:20px;border-radius:10px}
+.summary .line{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee}
+.summary .total{font-weight:800}
+.summary .checkout{margin-top:16px}
+
+/* Accessibility: focus for links */
+a:focus{outline:3px solid rgba(0,0,0,0.12);outline-offset:3px}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+}
+
+/* Prefer high contrast if requested */
+@media (prefers-contrast:more){
+  body{background:#b4748d}
+  .nav-link{color:#000}
+  .logo{color:#000}
+}
+
+/* Responsive */
+@media (max-width:600px){
+  .two-column{grid-template-columns:1fr;}
+  .cart-layout{grid-template-columns:1fr}
+  .products{flex-direction:column}
+  .product-card img{height:200px}
+  .nav-left{display:none}
+  .nav-right{flex:1}
+  .admin-layout{grid-template-columns:1fr}
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LAE - Carrito</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="page-cart">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <nav class="nav" role="navigation">
+      <div class="nav-left">
+        <a href="quienes-somos.html" class="nav-link">Quiénes somos</a>
+        <a href="productos.html" class="nav-link">Productos</a>
+      </div>
+      <div class="nav-center">
+        <div class="logo">❤❤❤LAE❤❤❤</div>
+      </div>
+      <div class="nav-right">
+        <a class="cart" href="carrito.html" aria-label="Carrito">🛒</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="main container">
+    <section class="cart-layout">
+      <aside id="cart-items" class="cart-items card" aria-live="polite">
+        <p>Cargando carrito...</p>
+      </aside>
+
+      <aside class="summary">
+        <h3>Resumen de compra</h3>
+        <div id="cart-summary"></div>
+        <label for="payment-method">Método de pago (entorno de prueba)</label>
+        <select id="payment-method"></select>
+        <div class="checkout">
+          <button id="checkout-button" class="btn primary full" aria-label="Finalizar compra">Finalizar compra</button>
+        </div>
+        <p id="cart-message" class="form-message" role="status" aria-live="polite"></p>
+      </aside>
+    </section>
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/573000000000" aria-label="WhatsApp">☎</a>
+  <script type="module" src="js/navigation.js"></script>
+  <script type="module" src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LAE - Productos</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="page-products">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header">
+    <nav class="nav" role="navigation">
+      <div class="nav-left">
+        <a href="quienes-somos.html" class="nav-link">Quiénes somos</a>
+        <a href="productos.html" class="nav-link active" aria-current="page">Productos</a>
+      </div>
+      <div class="nav-center">
+        <div class="logo">❤❤❤LAE❤❤❤</div>
+      </div>
+      <div class="nav-right">
+        <a class="cart" href="carrito.html" aria-label="Carrito">🛒</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" class="main container">
+    <section class="products">
+      <label class="sr-only" for="product-search">Buscar productos</label>
+      <input id="product-search" type="search" placeholder="Buscar productos..." autocomplete="off">
+      <label class="sr-only" for="category-filter">Filtrar por categoría</label>
+      <select id="category-filter"><option value="">Todas las categorías</option></select>
+    </section>
+    <p id="products-message" class="form-message" role="status" aria-live="polite"></p>
+    <section id="product-list" class="product-list" aria-live="polite"></section>
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/573000000000" aria-label="WhatsApp">☎</a>
+  <script type="module" src="js/navigation.js"></script>
+  <script type="module" src="js/products.js"></script>
+</body>
+</html>
